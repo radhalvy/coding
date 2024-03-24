@@ -19,7 +19,6 @@ def main():
         print("Invalid operation. Please, try again.")
         main()
     else:
-        # try:
             match operation:
                 case 1:
                     num1, num2 = get_numbers()
@@ -40,7 +39,5 @@ def main():
                 case _:
                     print("Invalid operation. Please, try again.")
                     main()
-        # except TypeError:
-        #     print("Invalid number. Please, try again.")
 
 main()
