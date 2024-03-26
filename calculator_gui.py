@@ -95,15 +95,18 @@ class CalculatorGui:
     def set_text(self, value):
         self.entry.insert("insert", value)
         
+    # Stores the first numeric value and clears the Entry
     def get_first_entry_values(self):
         global firstEntryValue
         firstEntryValue = self.entry.get()
         self.entry.delete(0, "end")
         return firstEntryValue
     
+    # Associates a button with an ID
     def get_button_id(self, buttonId):
         self.buttonId = buttonId
     
+    # Stores the second numeric value and performs an operation according to the buttonId
     def get_final_entry_values(self):
         finalEntryValue = self.entry.get()
         self.entry.delete(0, "end")
@@ -113,11 +116,16 @@ class CalculatorGui:
         elif self.buttonId == 2:
             self.entry.insert(0, int(firstEntryValue) * int(finalEntryValue))
             
-        elif self.buttonId == 3:
+        elif self.buttonId == 3:        
             self.entry.insert(0, int(firstEntryValue) - int(finalEntryValue))
-        else:
+            
+        elif self.buttonId == 4:            
             self.entry.insert(0, int(firstEntryValue) + int(finalEntryValue))
             
+        else:
+            pass
+            
+    # Clears entry
     def clear_entry(self):
         self.entry.delete(0, "end")
         
